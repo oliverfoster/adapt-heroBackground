@@ -1,0 +1,41 @@
+.interactivevideo-container {
+
+	//the first still image is used to set the height/width ratio of the videos
+
+	//not extra wide
+	&.not-wider-ratio {
+		.still-widget {
+			height: 100%;
+		    display: table;
+		    width: 100%;
+		}
+		.still-inner {
+	    	display: table-cell;
+			vertical-align: middle;
+			width:100%;
+
+			img {
+				width: 100%;
+				max-width: initial;
+			}
+	    }
+	}
+
+	//extra wide styling
+	&.is-wider-ratio {
+		.still-widget {
+			height: 100%;
+		    width: 100%;
+		}
+		.still-inner {
+			vertical-align: middle;
+			height: 100%;
+			
+			img {
+				height: 100%;
+				max-width: initial;
+			}
+	    }
+	}
+
+}

@@ -1,0 +1,123 @@
+.mediaelement-widget {
+
+    video::-webkit-media-controls {
+        display:none !important;
+    }
+
+    video::-webkit-media-controls-start-playback-button {
+      display: none !important;
+      -webkit-appearance: none;
+    }
+
+    height:100%;
+    width:100%;
+    margin: auto;
+
+	.mejs-overlay-button {
+        background-image: url(../../assets/bigplay.svg);
+    }
+
+    .no-svg .mejs-overlay-button {
+        background-image: url(../../assets/bigplay.png);
+    }
+
+    .mejs-overlay-loading,
+    .mejs-container .mejs-controls,
+    .mejs-controls .mejs-volume-button .mejs-volume-slider,
+    .mejs-controls .mejs-captions-button .mejs-captions-selector,
+    .mejs-captions-text,
+    .mejs-controls .mejs-sourcechooser-button .mejs-sourcechooser-selector,
+    .mejs-postroll-layer,
+    .mejs-postroll-close,
+    .mejs-controls .mejs-speed-button .mejs-speed-selector {
+        background-image: url(../../assets/background.png);
+    }
+
+    .mejs-overlay-loading {
+        .transparent-background-important();
+    }
+
+    .mejs-overlay-loading span {
+        background-image: url(../../assets/loading.gif);
+    }
+
+    .mejs-controls .mejs-button {
+        &.mejs-jump-forward-button {
+            background-image: url(../../assets/jumpforward.png);
+        }
+        &.mejs-skip-back-button {
+            background-image: url(../../assets/skipback.png);
+        }
+        button {
+            background-image: url(../../assets/controls.svg);
+            &:focus {
+                outline: @focus-outline;
+            }
+        }
+    }
+
+    .no-svg .mejs-controls .mejs-button button {
+        background-image: url(../../assets/controls.png);
+    }
+
+}
+
+//hide mejs controls completely
+.track {
+    .mejs-controls,
+    .mejs-overlay-play,
+    .mejs-overlay-error {
+        display:none !important;
+    }
+}
+
+//General fix for ie8 height - to force height
+.ie8 {
+	.track {
+		.me-plugin {
+	        position:relative;
+	        width:100%;
+	        height:100% !important;
+	        object {
+	            height: 100% !important;
+	            width: 100% !important;
+	        }
+	        embed {
+	            height: 100% !important;
+	            width: 100% !important;
+	        }
+	    }
+	}
+}
+
+
+.interactivevideo-container {
+
+    .mejs-container {
+        height:100% !important;
+        width:100% !important;
+        //background-color: iv-background-color
+    }
+
+
+    //chrome needs auto height
+    .mejs-mediaelement {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    //ie8 needs full height
+    .ie8 & {
+        .mejs-mediaelement {
+            height: 100% !important;
+        }   
+    }
+
+    //fullscreen extra-wide needs full height
+    &.in-fullwindow.is-wider-ratio {
+        .mejs-mediaelement {
+            height: 100% !important;
+        }   
+    }
+    
+}
